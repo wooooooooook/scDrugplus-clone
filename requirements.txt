@@ -1,7 +1,7 @@
 scanpy==1.9.3
 leidenalg==0.8.10
 numpy==1.23.1
-pandas==1.4.3
+pandas==1.5.0
 louvain==0.7.1
 python-igraph==0.9.11
 openpyxl==3.0.10
