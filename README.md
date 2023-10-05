@@ -16,7 +16,7 @@ The scDrug+ went through three parts on raw scRNA-seq data investigation: **Sing
 1.  Clone the repository to local directory, e.g., `./scDrug`.
 
     ```
-    git clone https://github.com/ailabstw/scDrug.git ./scDrug
+    git clone https://github.com/yysun0116/scDrugplus.git ./scDrug
     ```
 
 
@@ -163,9 +163,9 @@ optional arguments:
   -smiles INPUT_SMILES, --smiles INPUT
                         path to input the smiles string of unknown molecules (csv file)
   -o OUTPUT, --output OUTPUT
-                        path to output directory, default='./'
+                        path to the output directory, default='./'
   -m MODEL, --model MODEL
-                        the sensitivity screening in the previous analysis is from GDSC ic50/PRISM auc, e.g. GDSC, PRISM, default='PRISM'
+                        the sensitivity screening in the previous analysis is from GDSC ic50/PRISM AUC, e.g. GDSC, PRISM, default='PRISM'
 ```
 
 - Predict drug response on new drugs and specified clusters (here for default all clusters) with **Drug Response Prediction on new drugs**.
