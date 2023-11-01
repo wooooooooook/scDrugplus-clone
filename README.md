@@ -18,7 +18,7 @@ The scDrug+ went through three parts on raw scRNA-seq data investigation: **Sing
 1.  Clone the repository to local directory, e.g., `./scDrug`.
 
     ```
-    git clone https://github.com/yysun0116/scDrugplus.git ./scDrug
+    git clone https://github.com/ailabstw/scDrugplus.git ./scDrug
     ```
 
 
