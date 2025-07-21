@@ -19,28 +19,28 @@ The scDrug+ went through three parts on raw scRNA-seq data investigation: **Sing
 
 ## Download and Installation
 
-1.  Clone the repository to local directory, e.g., `./scDrug`.
+1.  Clone the repository to local directory, e.g., `./scDrugplus`.
 
     ```
-    git clone https://github.com/wooooooooook/scDrugplus-clone.git ./scDrug
-    ```
-
-
-2.  Build the Docker image tagged `sc-drug`.
-
-    ```
-    docker build -t sc-drug ./scDrug
+    git clone https://github.com/wooooooooook/scDrugplus-clone.git ./scDrugplus
     ```
 
 
-3.  Run the Docker container named `scDrug` with `/docker/path` mounted to `/server/path` to access files within the Docker container.
+2.  Build the Docker image tagged `sc-drug-plus`.
+
+    ```
+    docker build -t sc-drug-plus ./scDrugplus
+    ```
+
+
+3.  Run the Docker container named `scDrugplus` with `/docker/path` mounted to `/server/path` to access files within the Docker container.
     
     ```
-    docker run -it --name scDrug -v /server/path:/docker/path --privileged --ulimit nofile=65535:65535 sc-drug
+    docker run -it --name scDrugplus -v /server/path:/docker/path --privileged --ulimit nofile=65535:65535 sc-drug-plus
     ```
 
     
-4.  In the Docker container `scDrug`, pull the Docker image `cibersortx/fractions` used in treatment selection.
+4.  In the Docker container `scDrugplus`, pull the Docker image `cibersortx/fractions` used in treatment selection.
 
     ```
     /etc/init.d/docker start
