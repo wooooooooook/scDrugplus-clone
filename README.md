@@ -1,6 +1,8 @@
 # scDrug+: Drug-response prediction using gene expression and molecular structure
 
-### This repository is a clone of scDrugplus. 2025년 7월 21일 기준 최신 DockerEngine에서 실행이 가능하도록 Dockerfile 및 README.md를 수정했습니다.
+### This repository is a clone of scDrugplus. 
+
+### 2025년 7월 21일 기준 최신 DockerEngine에서 실행이 가능하도록 Dockerfile 및 README.md를 수정했습니다.
 
 *scDrug+ is the updated version of [scDrug: From scRNA-seq to Drug Repositioning](https://github.com/ailabstw/scDrug) with a new drug-response prediction function on molecules based on their molecular structure and the gene expression profile of the cell line/ patient in the second part **Drug Response Prediction** of the workflow.*
 
@@ -20,7 +22,7 @@ The scDrug+ went through three parts on raw scRNA-seq data investigation: **Sing
 1.  Clone the repository to local directory, e.g., `./scDrug`.
 
     ```
-    git clone https://github.com/ailabstw/scDrugplus.git ./scDrug
+    git clone https://github.com/wooooooooook/scDrugplus-clone.git ./scDrug
     ```
 
 
@@ -34,7 +36,7 @@ The scDrug+ went through three parts on raw scRNA-seq data investigation: **Sing
 3.  Run the Docker container named `scDrug` with `/docker/path` mounted to `/server/path` to access files within the Docker container.
     
     ```
-    docker run -it --name scDrug -v /server/path:/docker/path --privileged sc-drug
+    docker run -it --name scDrug -v /server/path:/docker/path --privileged --ulimit nofile=65535:65535 sc-drug
     ```
 
     
