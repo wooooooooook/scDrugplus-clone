@@ -18,7 +18,11 @@ RUN sed -i 's/\.ix/.loc/g' /opt/scMatch/scMatch.py
 RUN sed -i 's/loc\[commonRows, ].fillna(0\.0)/reindex(commonRows, axis="index", fill_value=0.0)/g' /opt/scMatch/scMatch.py
 
 # survival analysis
-RUN wget -q https://figshare.com/ndownloader/files/35612942 -O data/TCGA.zip
+RUN curl -L \
+     -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64)" \
+     -H "Accept: application/octet-stream" \
+     https://figshare.com/ndownloader/files/35612942 \
+     -o data/TCGA.zip
 RUN unzip data/TCGA.zip
 RUN rm data/TCGA.zip
 
@@ -35,9 +39,19 @@ RUN sed -i 's/import tensorflow as tf/import tensorflow.compat.v1 as tf\ntf.disa
 RUN sed -i 's/import tensorflow\.python\.util\.deprecation as deprecation/from tensorflow.python.util import deprecation/g' /opt/CaDRReS-Sc/cadrres_sc/model.py
 
 ## CIBERSORTx
-RUN curl -fsSL https://get.docker.com -o get-docker.sh
-RUN sh get-docker.sh
+RUN apt-get update -y
+RUN apt-get install -y ca-certificates curl
+RUN install -m 0755 -d /etc/apt/keyrings
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+RUN chmod a+r /etc/apt/keyrings/docker.asc
 
+RUN echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
+RUN apt-get update -y
+
+RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 CMD [ "/bin/bash" ]
 
