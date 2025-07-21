@@ -1,5 +1,7 @@
 # scDrug+: Drug-response prediction using gene expression and molecular structure
 
+### This repository is a clone of scDrugplus. 2025년 7월 21일 기준 최신 DockerEngine에서 실행이 가능하도록 Dockerfile 및 README.md를 수정했습니다.
+
 *scDrug+ is the updated version of [scDrug: From scRNA-seq to Drug Repositioning](https://github.com/ailabstw/scDrug) with a new drug-response prediction function on molecules based on their molecular structure and the gene expression profile of the cell line/ patient in the second part **Drug Response Prediction** of the workflow.*
 
 The scDrug+ constructed a workflow for comprehensive analysis on single-cell RNA sequencing (scRNA-seq) data. It provided a powerful tool with various functions, from fundamental data analysis to drug response prediction, and treatment suggestions.
